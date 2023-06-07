@@ -15,8 +15,6 @@ const ImageCard = ({ itemData, mode }) => {
     setData(e);
   };
 
-  console.log(open);
-
   return (
     <ImageList gap={20} sx={{ width: 900, height: 900 }}>
       <ImageListItem key="Subheader" cols={2}></ImageListItem>

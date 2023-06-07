@@ -6,7 +6,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const LandingPage = ({ mode }) => {
-  console.log(mode);
   return (
     <section className=" container mx-auto px-20 flex flex-col gap-5 justify-center h-screen ">
       {mode === "dark" ? (

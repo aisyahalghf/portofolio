@@ -1,154 +1,170 @@
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import GitHubIcon from "@mui/icons-material/GitHub";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
-// import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-// import MailOutlineIcon from "@mui/icons-material/MailOutline";
-// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import { useRef } from "react";
-import { Button, TextField } from "@mui/material";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { useRef, useState } from "react";
+import { TextField } from "@mui/material";
 import emailjs from "@emailjs/browser";
-import FormControl, { useFormControl } from "@mui/material/FormControl";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import Box from "@mui/material/Box";
-import FormHelperText from "@mui/material/FormHelperText";
-import { TextareaAutosize } from "@mui/base";
+import Swal from "sweetalert2";
+import Button from "@mui/material/Button";
 
 const Contact = () => {
   const form = useRef();
+  const [sender, setSender] = useState("");
+  const [senderEmail, setSenderEmail] = useState("");
+  const [dataMessage, setDataMessage] = useState("");
+  const [errInputSender, setErrInputSender] = useState("");
+  const [errInputSenderMail, setErrInputSenderEmail] = useState("");
+  const [errInputDataMessage, setErrInputDataMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const whatapp = () => {
-    const phoneNumber = "62882002095171";
-    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
-    window.open(url, "_blank");
+  const handleErrorInputSender = () => {
+    if (!sender) {
+      setErrInputSender("Filled name is required");
+    } else {
+      setErrInputSender("");
+    }
+  };
+
+  const handleErrorInputSenderEmail = () => {
+    const regexEmail =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!senderEmail) {
+      setErrInputSenderEmail("Filled Email is required");
+    } else if (!regexEmail.test(senderEmail)) {
+      setErrInputSenderEmail("Not Valid Email");
+    } else {
+      setErrInputSenderEmail("");
+    }
+  };
+
+  const handleErrorInputDataMessage = () => {
+    const colorForm = document.getElementsByName("dataMessage");
+    console.log(colorForm[0].color);
+    if (!dataMessage) {
+      setErrInputDataMessage("Filled message is required");
+    } else {
+      setErrInputDataMessage("");
+    }
   };
 
   const sendEmail = (e) => {
-    e.preventDefault(); // prevents the page from reloading when you hit “Send”
-
+    setLoading(true);
+    e.preventDefault();
     emailjs
       .sendForm(
-        "service_92kk59b",
-        "template_mrxb2ke",
+        process.env.REACT_APP_SERVICE_EMAIL,
+        process.env.REACT_APP_TEMPLATE_EMAIL,
         form.current,
-        "U6eUgm-q87iIlgjGw"
+        process.env.REACT_APP_KEY
       )
       .then(
         (result) => {
-          // show the user a success message
+          Swal.fire("Thank You!", "Your message has been delivered", "success");
+          setLoading(false);
         },
         (error) => {
-          console.log(error);
-          // show the user an error
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Sorry something went wrong!",
+          });
+          setLoading(false);
         }
       );
   };
 
   return (
-    <section className=" container mx-auto px-20 h-[91vh] ">
-      <h1 className="font-extrabold text-5xl ">Contact</h1>
-      <h2>
-        Feel free to Contact me by click on phone number or submitting the form
-        below and i will get back to you as soon as possible{" "}
-      </h2>
+    <section className=" container mx-auto  h-[91vh]   w-[30vw] text-justify  mt-10 ">
+      <div className="">
+        <h1 className="font-extrabold text-5xl mb-5 ">Contact.</h1>
+        <h2>
+          Feel free to Contact me by submitting the form below and i will get
+          back to you as soon as possible{" "}
+        </h2>
 
-      <Box component="form" className=" flex flex-col justify-center">
-        <TextField
-          error
-          id="outlined-helperText"
-          label="Name"
-          helperText="Filled your name"
-        />
-        <TextField
-          error
-          id="outlined-helperText"
-          label="Email"
-          helperText="Filled your email"
-        />
-        <TextField
-          error
-          id="outlined-helperText"
-          label="Email"
-          helperText="Filled your email"
-        />
-        <TextField
-          multiline
-          rows={3}
-          maxRows={5}
-          error
-          id="outlined-helperText"
-          label="Message"
-          helperText="Filled your message"
-        />
-        <button className=" w-fit flex justify-start border px-5 py-1 rounded-md font-bold hover:bg-stone-200 hover:text-slate-950  ">
-          Submit
-        </button>
-      </Box>
+        <Box
+          component="form"
+          className=" flex flex-col justify-center gap-5  py-10   "
+          ref={form}
+          onSubmit={sendEmail}
+        >
+          <TextField
+            error={errInputSender}
+            id="outlined-helperText"
+            label="Name"
+            size="small"
+            helperText={errInputSender}
+            name="sender"
+            value={sender}
+            onBlur={handleErrorInputSender}
+            onChange={(e) => {
+              setSender(e.target.value);
+            }}
+          />
+          <TextField
+            id="outlined-helperText"
+            error={errInputSenderMail}
+            label="Email"
+            size="small"
+            helperText={errInputSenderMail}
+            name="senderEmail"
+            onBlur={handleErrorInputSenderEmail}
+            onChange={(e) => {
+              setSenderEmail(e.target.value);
+            }}
+          />
+          <TextField
+            multiline
+            error={errInputDataMessage}
+            rows={3}
+            onBlur={handleErrorInputDataMessage}
+            size="small"
+            id="outlined-helperText"
+            label="Message"
+            helperText={errInputDataMessage}
+            name="dataMessage"
+            onChange={(e) => {
+              setDataMessage(e.target.value);
+            }}
+          />
+          {!sender || !senderEmail || !dataMessage ? null : (
+            <Button
+              disabled={
+                errInputDataMessage ||
+                errInputSender ||
+                errInputSenderMail ||
+                loading
+              }
+              type="submit"
+              variant="contained"
+              color="inherit"
+            >
+              Submit
+            </Button>
+          )}
+        </Box>
+      </div>
 
-      {/* <div className=" grid grid-cols-2 w-[500px] ">
-        <div>
-          <p className="h-8">
-            {" "}
-            <PhoneIphoneIcon /> Phone{" "}
-          </p>
-          <p className="h-8">
-            {" "}
-            <MailOutlineIcon /> Email
-          </p>
-          <p className="h-8">
-            {" "}
-            <AddLocationAltIcon /> Location
-          </p>
-          <p className="h-8">Github</p>
-          <p className="h-8">LinkedIn</p>
-          <p className="h-20">Sosial Media</p>
-        </div>
-        <div>
-          <button onClick={whatapp} className="h-8">
-            <WhatsAppIcon /> WhatApp{" "}
-          </button>
-
-          <p className="h-8">Bandung</p>
-          <p className="h-8">
-            <a href="https://github.com/aisyahalghf">
-              <GitHubIcon /> Github
-            </a>
-          </p>
-          <p className="h-8">
-            <a href="https://www.linkedin.com/in/aisyahputrialghifari">
-              <LinkedInIcon /> LinkedIn
-            </a>
-          </p>
-          <div className=" flex flex-col ">
-            <p>
-              <a href="https://twitter.com/Aisyahalghifari">
-                <TwitterIcon /> Twitter
-              </a>
-            </p>
-            <p>
-              <a href="https://twitter.com/Aisyahalghifari">
-                <FacebookIcon /> Facebook
-              </a>
-            </p>
-            <p>
-              <a href="https://twitter.com/Aisyahalghifari">
-                <InstagramIcon /> Instagram
-              </a>
-            </p>
-          </div>
-        </div>
-        <form ref={form} onSubmit={sendEmail}>
-          <label>Name</label>
-          <input type="text" name="user_name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Message</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
-        </form>
-      </div> */}
+      <div className=" flex justify-start gap-4 ">
+        <a href="https://github.com/aisyahalghf">
+          <GitHubIcon />
+        </a>
+        <a href="https://www.linkedin.com/in/aisyahputrialghifari">
+          <LinkedInIcon />
+        </a>
+        <a href="https://twitter.com/Aisyahalghifari">
+          <TwitterIcon />
+        </a>
+        <a href="https://www.facebook.com/aisyah.alghifari.14?mibextid=LQQJ4d">
+          <FacebookIcon />
+        </a>
+        <a href="https://www.instagram.com/aisyahalghf/?igshid=MjEwN2IyYWYwYw%3D%3D">
+          <InstagramIcon />
+        </a>
+      </div>
     </section>
   );
 };

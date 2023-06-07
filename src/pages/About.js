@@ -3,6 +3,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -32,9 +33,11 @@ const About = () => {
             experience then don't hesitate to contact me.
           </p>
 
-          <button className=" w-fit flex justify-start border px-5 py-1 rounded-md font-bold hover:bg-stone-200 hover:text-slate-950  ">
-            Contact Me
-          </button>
+          <Link to="/contact">
+            <div className=" w-fit flex justify-start border px-5 py-1 rounded-md font-bold hover:bg-stone-200 hover:text-slate-950  ">
+              Contact Me
+            </div>
+          </Link>
           <div>
             <div className=" flex justify-start gap-4   ">
               <a href="https://github.com/aisyahalghf">
