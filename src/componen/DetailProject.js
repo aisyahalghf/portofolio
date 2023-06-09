@@ -8,16 +8,15 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 600,
+  width: 800,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "1px solid #000",
   boxShadow: 24,
   p: 4,
   borderRadius: "16px",
 };
 
 const DetailProject = ({ data, mode, handleClose, open }) => {
-  console.log(data);
   return (
     <div>
       {mode === "dark" ? (
@@ -34,32 +33,24 @@ const DetailProject = ({ data, mode, handleClose, open }) => {
             </div>
             <div className="flex flex-col gap-5  text-white">
               <div>
-                <h1 className=" font-extrabold text-2xl ">Empty Carafes</h1>
-                <h2 id="modal-modal-description">
-                  Experience remorse writing at its amazing peak.
-                </h2>
+                <h1 className=" font-extrabold text-2xl ">{data.title}</h1>
               </div>
-
-              <img
-                className="rounded-xl"
-                src={data.img}
-                alt=""
-                height="100px"
-              />
-
+              <img className="rounded-xl " src={data.img} alt="" />
               <div>
                 <h1 className=" font-bold text-lg">About</h1>
                 <Typography id="modal-modal-description">
-                  Empty Carafes is a content platform which allows readers to
-                  engage in a wide range of dynamic and innovative ideas
-                  expressed through different art forms.
+                  {data.about}
                 </Typography>
               </div>
               <div>
-                <h1 className=" font-bold text-lg">Technologies</h1>
-                <Button disabled variant="outlined" size="small">
-                  Javascript
-                </Button>
+                <h1 className=" font-bold text-lg mb-2">Technologies</h1>
+                <div className=" flex flex-wrap  gap-3">
+                  {data?.tech?.map((val) => (
+                    <Button disabled variant="outlined" size="small">
+                      {val}
+                    </Button>
+                  ))}
+                </div>
               </div>
             </div>
           </Box>
@@ -75,30 +66,53 @@ const DetailProject = ({ data, mode, handleClose, open }) => {
             <div className="flex justify-end">
               <CancelPresentationIcon onClick={handleClose} />
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 text-justify ">
               <div>
-                <h1 className=" font-extrabold text-2xl ">Empty Carafes</h1>
-                <h2 id="modal-modal-description" className=" text-stone-500">
-                  Experience remorse writing at its amazing peak.
-                </h2>
+                <h1 className=" font-extrabold text-2xl "> {data.title}</h1>
               </div>
-              <img src={data.img} alt="" />
+              <img
+                className=" border border-slate-200 rounded-md shadow shadow-slate-200 "
+                src={data.img}
+                alt=""
+              />
               <div>
                 <h1 className=" font-bold text-lg">About</h1>
                 <Typography
                   className=" text-stone-500"
                   id="modal-modal-description"
                 >
-                  Empty Carafes is a content platform which allows readers to
-                  engage in a wide range of dynamic and innovative ideas
-                  expressed through different art forms.
+                  {data.about}
                 </Typography>
               </div>
               <div>
-                <h1 className=" font-bold text-lg">Technologies</h1>
-                <Button disabled variant="outlined" size="small">
-                  Javascript
-                </Button>
+                <h1 className=" font-bold text-lg mb-1">Technologies</h1>
+                <div className=" flex flex-wrap  gap-3">
+                  {data?.tech?.map((val) => (
+                    <Button disabled variant="outlined" size="small">
+                      {val}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h1 className=" font-bold text-lg  ">Website and Github</h1>
+                <div className=" text-stone-500">
+                  <a className=" hover:underline " href={`${data.Link}`}>
+                    {data.Link}
+                  </a>
+                  <div className=" flex flex-col ">
+                    {data?.github?.map((val, idx) => (
+                      <a
+                        key={idx.toLocaleString()}
+                        className=" hover:underline  "
+                        href={`${val}`}
+                      >
+                        {val}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </Box>

@@ -16,38 +16,48 @@ const ImageCard = ({ itemData, mode }) => {
   };
 
   return (
-    <ImageList gap={20} sx={{ width: 900, height: 900 }}>
+    <ImageList gap={30} sx={{ width: 1400, height: 700 }}>
       <ImageListItem key="Subheader" cols={2}></ImageListItem>
       {itemData?.map((item) => (
-        <ImageListItem key={item.img} onClick={(e) => handleClick(item)}>
+        <ImageListItem
+          key={item.img}
+          onClick={(e) => handleClick(item)}
+          sx={{
+            position: "relative",
+            "&:hover .image-overlay": {
+              opacity: 1,
+            },
+          }}
+        >
           <img
-            className="rounded-xl"
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            className="rounded-2xl border border-slate-200 shadow shadow-slate-200  "
+            src={item.img}
             alt={item.title}
             loading="lazy"
           />
-          <ImageListItemBar
-            className="rounded-b-xl"
-            title={item.title}
-            subtitle={item.author}
-            actionIcon={
-              <IconButton
-                sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                size="small"
-              >
-                <div className="border border-slate-200 rounded-lg px-2 text-sm">
-                  React.js
-                </div>
-                <div className="border border-slate-200 rounded-lg px-2 text-sm">
-                  Javascript
-                </div>
-                <div className="border border-slate-200 rounded-lg px-2 text-sm">
-                  redux
-                </div>
-              </IconButton>
-            }
-          />
+          <div className=" image-overlay">
+            <ImageListItemBar
+              className="rounded-b-2xl h-16  "
+              title={item.title}
+              actionIcon={
+                <IconButton
+                  sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                  size="small"
+                  gap="2px"
+                >
+                  <div className="border border-slate-200 rounded-lg px-2 text-sm mr-2">
+                    {item?.tech?.slice(0, 1)}
+                  </div>
+                  <div className="border border-slate-200 rounded-lg px-2 text-sm mr-2">
+                    {item?.tech?.slice(1, 2)}
+                  </div>
+                  <div className="border border-slate-200 rounded-lg px-2 text-sm mr-2">
+                    {item?.tech?.slice(2, 3)}
+                  </div>
+                </IconButton>
+              }
+            />
+          </div>
         </ImageListItem>
       ))}
       <DetailProject
