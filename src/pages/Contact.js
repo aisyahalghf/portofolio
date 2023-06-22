@@ -129,7 +129,7 @@ const Contact = () => {
             onChange={(e) => {
               setDataMessage(e.target.value);
             }}
-          />
+          />{" "}
           {!sender || !senderEmail || !dataMessage ? null : (
             <Button
               disabled={

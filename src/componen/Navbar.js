@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { Link } from "react-router-dom";
+import logo from "../logo.jpg";
 
 const Navbar = ({ handleClick }) => {
   const theme = useTheme();
@@ -51,6 +52,7 @@ const Navbar = ({ handleClick }) => {
           <nav className="  shadow shadow-slate-200 sticky top-0 z-10 bg-white ">
             <div className=" flex justify-between text-stone-500 h-20 items-center container mx-auto  ">
               <Link to="/">
+                {/* <img src={logo} alt="" width="100px" /> */}
                 <h1 className=" text-4xl  font-shadow text-black">APA.</h1>
               </Link>
               <div className=" grid grid-cols-5 gap-5 items-center  text-stone-500 ">

@@ -109,7 +109,16 @@ const Project = ({ mode }) => {
         "https://github.com/aisyahalghf/rajaOngkir-App",
       ],
       about:
-        "SendSage is specifically designed for effortless checking of intercity shipping costs. By utilizing the free open API provided by Raja Ongkir, users can easily access accurate and up-to-date shipping rates. Additionally, our seamless backend integration serves as a reliable bridge connecting the client to the Raja Ongkir server.",
+        "SendSage is specifically designed for effortless checking of intercity shipping costs. By utilizing the free open API provided by Raja Ongkir, users can easily access accurate and up-to-date shipping rates.",
+    },
+    {
+      img: "https://drive.google.com/uc?export=view&id=1SjNjV49RzT5gi0bqxkBfH_HKj9HrvpYk",
+      title: "Website TK Al-Danazar",
+      Link: "https://tk-aldanazar-pamulihan.vercel.app/",
+      tech: ["ReactJS", "Javascript", "Node", "Tailwind", "Chakra UI"],
+      github: ["https://github.com/aisyahalghf/tk-aldanazar-pamulihan"],
+      about:
+        "This website can be used by users to get the latest information about registration or activities at Al-Danazar Kindergarten. This website is still in the development stage for the parent dashboard. ",
     },
   ];
 
