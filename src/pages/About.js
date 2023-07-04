@@ -7,18 +7,20 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <section className=" container mx-auto px-20 mt-10 flex flex-col items-center gap-28  h-screen ">
+    <section className=" container mx-auto px-2 md:px-20 mt-10 flex flex-col items-center gap-10 md:gap-28 pb-20 h-full  ">
       <div className="flex flex-col gap-10 items-center">
-        <h1 className=" font-extrabold text-5xl ">About Me.</h1>
-        <h2>
+        <h1 className=" font-extrabold text-3xl md:text-5xl ">About Me.</h1>
+        <h2 className=" text-center md:text-start ">
           Here you will find more information about me, what I do, and my
           current skills mostly in terms of programming and technology
         </h2>
       </div>
-      <div className=" grid grid-cols-2 gap-20">
+      <div className=" grid grid-cols-2 items-start md:items-stretch gap-5 md:gap-20 ">
         <div className=" flex flex-col justify-between gap-5 ">
-          <h1 className=" font-extrabold text-3xl">Get to know me!</h1>
-          <p className=" text-justify ">
+          <h1 className=" font-extrabold text-lg md:text-3xl">
+            Get to know me!
+          </h1>
+          <p className=" text-justify text-[10px] md:text-base   ">
             I'm a Full-stack Web Developer building the Front-end and back-end
             of Websites and Web Applications that leads to the success of the
             overall product.
@@ -34,35 +36,37 @@ const About = () => {
           </p>
 
           <Link to="/contact">
-            <div className=" w-fit flex justify-start border px-5 py-1 rounded-md font-bold hover:bg-stone-200 hover:text-slate-950  ">
+            <div className=" w-fit flex justify-start border text-xs md:text-base px-2 md:px-5 py-1 rounded-md font-bold hover:bg-stone-200 hover:text-slate-950  ">
               Contact Me
             </div>
           </Link>
           <div>
-            <div className=" flex justify-start gap-4   ">
+            <div className=" flex justify-start gap-1 md:gap-4   ">
               <a href="https://github.com/aisyahalghf">
-                <GitHubIcon />
+                <GitHubIcon fontSize="small" />
               </a>
               <a href="https://www.linkedin.com/in/aisyahputrialghifari">
-                <LinkedInIcon />
+                <LinkedInIcon fontSize="small" />
               </a>
               <a href="https://twitter.com/Aisyahalghifari">
-                <TwitterIcon />
+                <TwitterIcon fontSize="small" />
               </a>
               <a href="https://www.facebook.com/aisyah.alghifari.14?mibextid=LQQJ4d">
-                <FacebookIcon />
+                <FacebookIcon fontSize="small" />
               </a>
               <a href="https://www.instagram.com/aisyahalghf/?igshid=MjEwN2IyYWYwYw%3D%3D">
-                <InstagramIcon />
+                <InstagramIcon fontSize="small" />
               </a>
             </div>
           </div>
         </div>
 
         <div>
-          <h1 className=" font-extrabold text-3xl mb-5">What I Can Do</h1>
-          <h1 className=" font-extrabold text-xl mb-2">Front-end</h1>
-          <p>
+          <h1 className=" font-extrabold text-lg md:text-3xl mb-5 ">
+            What I Can Do
+          </h1>
+          <h1 className=" font-extrabold text-sm md:text-xl mb-2">Front-end</h1>
+          <p className=" text-[10px] md:text-base text-justify ">
             Build client-side apps with continuous learning features for SEO
             optimization. Use technology to support conveniences such as
             React.js, Redux toolkit, and in a CSS framework using Tailwind, Nuka
@@ -70,45 +74,47 @@ const About = () => {
             my skills by continuing to read and try new technologies in this
             field.
           </p>
-          <h1 className=" font-extrabold text-xl mb-2 mt-3 ">Back-end</h1>
-          <p className="mb-5">
+          <h1 className=" font-extrabold text-sm md:text-xl mb-2 mt-3 ">
+            Back-end
+          </h1>
+          <p className="mb-5 text-[10px] md:text-base text-justify">
             Build scalable and maintainable server applications using
             cutting-edge technologies such as Express. js, Sequalize Orm, and
             for database storage I use MySql and i'm currently learning about
             Docker and Socket.IO. I am very disciplined to keep learning so as
             not to be left behind with the latest technology.
           </p>
-          <div className="flex gap-3 flex-wrap  ">
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
+          <div className="flex gap-1 md:gap-3 flex-wrap  ">
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5  ">
               Javascript
             </button>
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5 ">
               Node.js
             </button>
 
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5  ">
               HTML
             </button>
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
-              Cascading Style Sheets
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5 ">
+              CSS
             </button>
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5  ">
               React.js
             </button>
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5 ">
               Express.js
             </button>
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5  ">
+              Git
+            </button>
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5  ">
               MySQL
             </button>
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5  ">
               Squalize
             </button>
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
+            <button className="border px-1 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950 text-xs md:text-base md:px-5  ">
               Redux
-            </button>
-            <button className="border px-5 py-1 rounded-md  hover:bg-stone-200 hover:text-slate-950  ">
-              Git
             </button>
           </div>
         </div>

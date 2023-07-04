@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Resume = () => {
   return (
-    <section className="container mx-auto flex justify-center mt-10 h-fit  ">
+    <section className="container mx-auto flex justify-center mt-10 h-min ">
       <div className=" flex flex-col items-start gap-5">
         <h1 className="text-4xl font-shadow font-extrabold  ">My Resume.</h1>
         <h1 className="text-stone-500">
@@ -14,7 +14,7 @@ const Resume = () => {
           page.
           <a
             className=" font-extrabold  "
-            href="https://drive.google.com/file/d/1KztghtedpEHidyrSGnt8428EKaoR8k0g/view"
+            href="https://drive.google.com/file/d/1uU9LTFkmb6rvbZSYNkQkeXJXgBT5AZRtview"
           >
             {" "}
             view{" "}
@@ -22,11 +22,11 @@ const Resume = () => {
           the resume{" "}
         </h1>
         <div className=" flex flex-col gap-5">
-          <a href="https://drive.google.com/file/d/1KztghtedpEHidyrSGnt8428EKaoR8k0g/view">
+          <a href="https://drive.google.com/file/d/1uU9LTFkmb6rvbZSYNkQkeXJXgBT5AZRt/view">
             {" "}
             <img
-              className="w-[700px]  h-[1000px]"
-              src="https://drive.google.com/uc?export=view&id=1KztghtedpEHidyrSGnt8428EKaoR8k0g"
+              className=" w-full md:w-[700px] h-[600px] md:h-full border "
+              src="https://drive.google.com/uc?export=view&id=1uU9LTFkmb6rvbZSYNkQkeXJXgBT5AZRt"
               alt=""
             />
           </a>

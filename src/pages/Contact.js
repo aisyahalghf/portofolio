@@ -77,7 +77,7 @@ const Contact = () => {
   };
 
   return (
-    <section className=" container mx-auto  h-[91vh]   w-[30vw] text-justify  mt-10 ">
+    <section className=" container mx-auto  h-[91vh]  px-5 md:px-20 lg:px-0 w-full  lg:w-[30vw] text-justify  mt-10 ">
       <div className="">
         <h1 className="font-extrabold text-5xl mb-5 ">Contact.</h1>
         <h2>

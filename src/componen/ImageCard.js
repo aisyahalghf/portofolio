@@ -16,49 +16,60 @@ const ImageCard = ({ itemData, mode }) => {
   };
 
   return (
-    <ImageList gap={30} sx={{ width: 1400, height: 700 }}>
-      <ImageListItem key="Subheader" cols={2}></ImageListItem>
+    <ImageList
+      gap={30}
+      sx={{
+        display: { xs: "grid", md: "grid" },
+        gridTemplateColumns: {
+          xs: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+        },
+      }}
+      className=" w-full h-[500px] md:w-[1400px] md:h-[700px]  "
+    >
       {itemData?.map((item) => (
-        <ImageListItem
-          key={item.img}
-          onClick={(e) => handleClick(item)}
-          sx={{
-            position: "relative",
-            "&:hover .image-overlay": {
-              opacity: 1,
-            },
-          }}
-        >
-          <img
-            className="rounded-2xl border border-slate-200 shadow shadow-slate-200  "
-            src={item.img}
-            alt={item.title}
-            loading="lazy"
-          />
-          <div className=" image-overlay">
-            <ImageListItemBar
-              className="rounded-b-2xl h-16  "
-              title={item.title}
-              actionIcon={
-                <IconButton
-                  sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                  size="small"
-                  gap="2px"
-                >
-                  <div className="border border-slate-200 rounded-lg px-2 text-sm mr-2">
-                    {item?.tech?.slice(0, 1)}
-                  </div>
-                  <div className="border border-slate-200 rounded-lg px-2 text-sm mr-2">
-                    {item?.tech?.slice(1, 2)}
-                  </div>
-                  <div className="border border-slate-200 rounded-lg px-2 text-sm mr-2">
-                    {item?.tech?.slice(2, 3)}
-                  </div>
-                </IconButton>
-              }
+        <div>
+          <ImageListItem
+            key={item.img}
+            onClick={(e) => handleClick(item)}
+            sx={{
+              position: "relative",
+              "&:hover .image-overlay": {
+                opacity: 1,
+              },
+            }}
+          >
+            <img
+              className="rounded-2xl border border-slate-200 shadow shadow-slate-200  "
+              src={item.img}
+              alt={item.title}
+              loading="lazy"
             />
-          </div>
-        </ImageListItem>
+            <div className=" image-overlay">
+              <ImageListItemBar
+                className="rounded-b-2xl h-9  md:h-16  "
+                title={item.title}
+                actionIcon={
+                  <IconButton
+                    sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                    size="small"
+                    gap="2px"
+                  >
+                    <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] md:text-sm md:mr-2">
+                      {item?.tech?.slice(0, 1)}
+                    </div>
+                    <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] md:text-sm  md:mr-2">
+                      {item?.tech?.slice(1, 2)}
+                    </div>
+                    <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] md:text-sm  md:mr-2">
+                      {item?.tech?.slice(2, 3)}
+                    </div>
+                  </IconButton>
+                }
+              />
+            </div>
+          </ImageListItem>
+        </div>
       ))}
       <DetailProject
         data={data}
