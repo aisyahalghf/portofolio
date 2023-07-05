@@ -9,7 +9,6 @@ const style = {
   bgcolor: "background.paper",
   border: "1px solid #000",
   boxShadow: 24,
-  borderRadius: "16px",
 };
 
 const DetailProject = ({ data, mode, handleClose, open }) => {
@@ -28,7 +27,10 @@ const DetailProject = ({ data, mode, handleClose, open }) => {
       aria-describedby="modal-modal-description"
       className={color()}
     >
-      <Box className=" w-full h-full  md:w-[800px] p-2 md:p-4" sx={style}>
+      <Box
+        className=" w-full h-fit  md:h-fit xl:w-[800px] p-2 pb-5 md:p-4 rounded-lg md:rounded-[16px] "
+        sx={style}
+      >
         <div className="flex justify-end">
           <CancelPresentationIcon onClick={handleClose} />
         </div>
@@ -36,22 +38,24 @@ const DetailProject = ({ data, mode, handleClose, open }) => {
           <div>
             <h1 className=" font-extrabold text-2xl "> {data.title}</h1>
           </div>
-          <img
-            className=" border border-slate-200 rounded-md shadow shadow-slate-200 "
-            src={data.img}
-            alt=""
-          />
+          <div className=" flex justify-center">
+            <img
+              className=" border border-slate-200 rounded-md shadow shadow-slate-200 w-[400px] h-[200px] md:w-[700px] md:h-[400px] "
+              src={data.img}
+              alt=""
+            />
+          </div>
           <div>
             <h1 className=" font-bold text-lg">About</h1>
-            <p className=" text-[10px] md:text-xs" id="modal-modal-description">
+            <p className=" text-[10px] md:text-sm" id="modal-modal-description">
               {data.about}
             </p>
           </div>
           <div>
             <h1 className=" font-bold text-lg mb-1">Technologies</h1>
-            <div className=" flex flex-wrap  gap-2 md:gap-3">
+            <div className=" flex flex-wrap  gap-2 ">
               {data?.tech?.map((val) => (
-                <div className="border border-slate-200 px-2 rounded-sm text-[10px] md:text-xs">
+                <div className="border border-slate-200 px-2 rounded-sm text-[10px] md:text-sm">
                   {val}
                 </div>
               ))}
@@ -62,7 +66,7 @@ const DetailProject = ({ data, mode, handleClose, open }) => {
             <h1 className=" font-bold text-lg  ">Website and Github</h1>
             <div>
               <a
-                className=" hover:underline text-[10px] md:text-xs "
+                className=" hover:underline text-[10px] md:text-sm "
                 href={`${data.Link}`}
               >
                 {data.Link}
@@ -71,7 +75,7 @@ const DetailProject = ({ data, mode, handleClose, open }) => {
                 {data?.github?.map((val, idx) => (
                   <a
                     key={idx.toLocaleString()}
-                    className=" hover:underline  text-[10px] md:text-xs   "
+                    className=" hover:underline  text-[10px] md:text-sm   "
                     href={`${val}`}
                   >
                     {val}

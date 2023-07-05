@@ -12,7 +12,7 @@ const ImageCard = ({ itemData, mode }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleClick = (e) => {
     setOpen(true);
@@ -28,9 +28,9 @@ const ImageCard = ({ itemData, mode }) => {
 
   return (
     <ImageList
-      gap={20}
+      gap={30}
       cols={getCols()}
-      className=" w-full h-[500px] md:w-[1400px] md:h-[700px]   "
+      className=" w-full  xxl:w-[1400px] mb-10 md:mb-16  "
     >
       {itemData?.map((item) => (
         <ImageListItem
@@ -43,15 +43,18 @@ const ImageCard = ({ itemData, mode }) => {
             },
           }}
         >
-          <img
-            className="rounded-2xl border border-slate-200 shadow shadow-slate-200  "
-            src={item?.img}
-            alt={item?.title}
-            loading="lazy"
-          />
+          <div>
+            <img
+              className=" rounded-lg md:rounded-2xl border border-slate-200 shadow shadow-slate-200 h-[200px] md:h-[400px] md:w-[700px]  xxl:h-[400px] w-[400px] xxl:w-[700px]"
+              src={item?.img}
+              alt={item?.title}
+              loading="lazy"
+            />
+          </div>
+
           <div className=" image-overlay">
             <ImageListItemBar
-              className="rounded-b-2xl h-9  md:h-16  "
+              className=" rounded-b-lg md:rounded-b-2xl h-9  md:h-16  "
               title={item?.title}
               actionIcon={
                 <IconButton
@@ -59,13 +62,13 @@ const ImageCard = ({ itemData, mode }) => {
                   size="small"
                   gap="2px"
                 >
-                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] md:text-sm md:mr-2">
+                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm md:mr-2">
                     {item?.tech?.slice(0, 1)}
                   </div>
-                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] md:text-sm  md:mr-2">
+                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm  md:mr-2">
                     {item?.tech?.slice(1, 2)}
                   </div>
-                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] md:text-sm  md:mr-2">
+                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm  md:mr-2">
                     {item?.tech?.slice(2, 3)}
                   </div>
                 </IconButton>

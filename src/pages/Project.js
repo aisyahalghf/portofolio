@@ -5,7 +5,8 @@ const Project = ({ mode }) => {
     {
       img: "https://drive.google.com/uc?export=view&id=1OyciYIi8C4VLE8-B2HPngs0cWvGqUWgL",
       title: "GoKu App",
-      Link: "hahahah",
+      Link: "",
+      github: ["https://github.com/ridhozhr10/JCWDOL00807"],
       tech: [
         "ReactJS",
         "Javascript",
@@ -31,7 +32,8 @@ const Project = ({ mode }) => {
     {
       img: "https://drive.google.com/uc?export=view&id=1diCOerxX3O5i54BTuVq62nu3skm0f9v-",
       title: "Portfolio",
-      Link: "hihi",
+      Link: "https://portofolio-ten-lovat.vercel.app/",
+      github: ["https://github.com/aisyahalghf/portofolio"],
       tech: [
         "ReactJS",
         "Javascript",
@@ -46,7 +48,11 @@ const Project = ({ mode }) => {
     {
       img: "https://drive.google.com/uc?export=view&id=1LSX6atcd-IvobKMaxvOQ_fKcusIlCzpb",
       title: "White Buss App",
-      Link: "hahahah",
+      Link: "",
+      github: [
+        "https://github.com/aisyahalghf/buss-app",
+        "https://github.com/aisyahalghf/buss-API",
+      ],
       tech: [
         "ReactJS",
         "Javascript",
@@ -70,7 +76,11 @@ const Project = ({ mode }) => {
     {
       img: "https://drive.google.com/uc?export=view&id=1cau8TuhW4jpL6sQ_0WV_LVGJEsDvv3TX",
       title: "Hashtagram",
-      Link: "hahahah",
+      Link: "",
+      github: [
+        "https://github.com/aisyahalghf/hastagram-app",
+        "https://github.com/aisyahalghf/hastagram-api",
+      ],
       tech: [
         "React.js",
         "Javascript",
@@ -120,13 +130,36 @@ const Project = ({ mode }) => {
       about:
         "This website can be used by users to get the latest information about registration or activities at Al-Danazar Kindergarten. This website is still in the development stage for the parent dashboard. ",
     },
+    {
+      img: "https://drive.google.com/uc?export=view&id=17hV3pwMVXYvcIYUpCWDKpIrTkVX2nPpV",
+      title: "TodoList",
+      Link: "",
+      tech: ["ReactJS", "Javascript", "Node", "Tailwind", "Chakra UI"],
+      github: [
+        "https://github.com/aisyahalghf/todolist-react.js",
+        "https://github.com/aisyahalghf/todolist-API-express",
+      ],
+      about:
+        "Build a web application that is useful to help users manage their time and ensure that they have completed their work on time.",
+    },
+    {
+      img: "https://drive.google.com/uc?export=view&id=1lzOWddeGo9chMrxmWNnIHlOHHe3Lb8PT",
+      title: "Starbucks Clone",
+      Link: "",
+      tech: ["ReactJS", "Javascript", "Node", "Tailwind", "Chakra UI"],
+      github: [
+        "https://github.com/aisyahalghf/starbucks-app",
+        "https://github.com/aisyahalghf/starbucks-API",
+      ],
+      about:
+        "Develop a Starbucks website clone that can handle many daily active users and develop features that can handle a large number of transactions per day",
+    },
   ];
 
   return (
-    <section className="container mx-auto flex justify-center mt-10 ">
+    <section className="container mx-auto flex justify-center mt-10 h-[100vh] px-5 md:px-0 xl:px-5">
       <div className="flex flex-col gap-10">
-        <div className=" font-extrabold text-5xl">Project.</div>
-
+        <div className=" font-extrabold text-5xl  ">Project.</div>
         <ImageCard itemData={data} mode={mode} />
       </div>
     </section>
