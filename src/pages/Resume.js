@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Resume = () => {
   return (
-    <section className="container mx-auto flex justify-center mt-10 h-min ">
+    <section className="container mx-auto flex justify-center mt-10 px-3 md:px-0  ">
       <div className=" flex flex-col items-start gap-5">
         <h1 className="text-4xl font-shadow font-extrabold  ">My Resume.</h1>
         <h1 className="text-stone-500">
@@ -25,7 +25,7 @@ const Resume = () => {
           <a href="https://drive.google.com/file/d/1uU9LTFkmb6rvbZSYNkQkeXJXgBT5AZRt/view">
             {" "}
             <img
-              className=" w-full md:w-[700px] h-[600px] md:h-full border "
+              className=" w-full md:w-[700px] h-full md:h-full border "
               src="https://drive.google.com/uc?export=view&id=1uU9LTFkmb6rvbZSYNkQkeXJXgBT5AZRt"
               alt=""
             />

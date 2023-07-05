@@ -126,9 +126,8 @@ const Project = ({ mode }) => {
     <section className="container mx-auto flex justify-center mt-10 ">
       <div className="flex flex-col gap-10">
         <div className=" font-extrabold text-5xl">Project.</div>
-        <div className=" grid grid-rows-1">
-          <ImageCard itemData={data} mode={mode} />
-        </div>
+
+        <ImageCard itemData={data} mode={mode} />
       </div>
     </section>
   );
