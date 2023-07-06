@@ -53,9 +53,11 @@ const LandingPage = ({ mode }) => {
           section.
         </h1>
       </div>
-      <h1>
-        see more about me <ArrowRightAltIcon className=" animate-pulse  " />{" "}
-      </h1>
+      <Link to="/about">
+        <h1>
+          see more about me <ArrowRightAltIcon className=" animate-pulse  " />{" "}
+        </h1>
+      </Link>
 
       <div className=" flex justify-start gap-4 ">
         <a href="https://github.com/aisyahalghf">

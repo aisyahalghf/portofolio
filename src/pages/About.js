@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <section className=" container mx-auto px-2 md:px-20 mt-10 flex flex-col items-center gap-10 md:gap-28 pb-20 h-full  ">
+    <section className=" container mx-auto px-2 md:px-10 lg:px-20 mt-10 flex flex-col items-center gap-10 xl:gap-28 pb-20 h-full md:h-[100vh] lg:h-fit xl:h-[100vh] ">
       <div className="flex flex-col gap-10 items-center">
         <h1 className=" font-extrabold text-3xl md:text-5xl ">About Me.</h1>
         <h2 className=" text-center md:text-start ">
@@ -15,7 +15,7 @@ const About = () => {
           current skills mostly in terms of programming and technology
         </h2>
       </div>
-      <div className=" grid grid-cols-2 items-start md:items-stretch gap-5 md:gap-20 ">
+      <div className=" grid grid-cols-2 items-start md:items-stretch gap-5 md:gap-10 lg:gap-20 ">
         <div className=" flex flex-col justify-between gap-5 ">
           <h1 className=" font-extrabold text-lg md:text-3xl">
             Get to know me!

@@ -25,7 +25,7 @@ const Resume = () => {
           <a href="https://drive.google.com/file/d/1uU9LTFkmb6rvbZSYNkQkeXJXgBT5AZRt/view">
             {" "}
             <img
-              className=" w-full md:w-[700px] h-full md:h-full border "
+              className=" w-[800px] md:w-[700px] h-[900px] md:h-full border "
               src="https://drive.google.com/uc?export=view&id=1uU9LTFkmb6rvbZSYNkQkeXJXgBT5AZRt"
               alt=""
             />
