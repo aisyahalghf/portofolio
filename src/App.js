@@ -32,13 +32,18 @@ function MyApp() {
           color: "text.secondary",
         }}
       >
-        <Navbar handleClick={handleClick} />
         <Routes>
-          <Route path="/" element={<LandingPage mode={mode} />} />
-          <Route path="/resume" element={<Resume mode={mode} />} />
-          <Route path="/project" element={<Project mode={mode} />} />
-          <Route path="/about" element={<About mode={mode} />} />
-          <Route path="/contact" element={<Contact mode={mode} />} />
+          <Route
+            path='/'
+            element={<LandingPage mode={mode} func={handleClick} />}
+          />
+          <Route
+            path='/resume'
+            element={<Resume mode={mode} func={handleClick} />}
+          />
+          <Route path='/project' element={<Project mode={mode} />} />
+          <Route path='/about' element={<About mode={mode} />} />
+          <Route path='/contact' element={<Contact mode={mode} />} />
         </Routes>
       </Box>
     </>
