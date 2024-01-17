@@ -9,9 +9,9 @@ import Navbar from "../componen/Navbar";
 
 const LandingPage = ({ mode, func }) => {
   return (
-    <div className=''>
+    <div>
       <Navbar handleClick={func} />
-      <div className='container mx-auto px-5 md:px-20 flex flex-col gap-5 justify-center py-20 md:py-0 min-h-[100vh] m '>
+      <div className='container mx-auto px-5 md:px-20 flex flex-col gap-5 justify-center py-20 md:py-0 min-h-[100vh]  '>
         {mode === "dark" ? (
           <h1 className='text-5xl font-extrabold animate-text bg-gradient-to-r from-[#532d2d] via-[#a7a5ac] to-[#ffffff] bg-clip-text text-transparent mb-10 md:mb-0  '>
             I'm Aisyah Putri Alghifari
