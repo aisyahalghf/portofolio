@@ -1,8 +1,8 @@
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Link } from "react-router-dom";
-import Navbar from "../componen/Navbar";
 import { Icon } from "@iconify/react";
 import { useTheme } from "@mui/material/styles";
+import Menu from "../componen/Menu";
 
 const Resume = ({ func }) => {
   const pdfUrl = `https://xfxbklalncxxnvexsatq.supabase.co/storage/v1/object/public/resume/CV_Aisyah_Putri_Alghifari.pdf?t=2024-01-16T04%3A11%3A32.735Z`;
@@ -16,13 +16,15 @@ const Resume = ({ func }) => {
 
   return (
     <section>
-      <Navbar handleClick={func} />
+      <div className='fixed right-0 z-20'>
+        <Menu />
+      </div>
       <div className='container mx-auto flex justify-center px-3 md:px-0 min-h-[100vh]  '>
         <div className='flex flex-col items-start'>
           <div
-            className={` py-10 w-full sticky top-20 md:top-32 ${
-              mode === "dark" ? "z-10 border-t-2 border-t-slate-400" : ""
-            }  ${mode === "dark" ? darkColor : lightColor} `}
+            className={` py-10 w-full sticky top-0 md:top-0   ${
+              mode === "dark" ? darkColor : lightColor
+            } `}
           >
             <h1 className='text-4xl font-shadow font-extrabold mb-5'>
               My Resume.
@@ -48,7 +50,7 @@ const Resume = ({ func }) => {
 
           <div className='w-fit h-fit md:w-[700px] md:h-[500] l:w-[800px] l:h-[1030px] border border-slate-200 rounded-sm '>
             <div
-              className={`absolute  w-[90%] md:w-[600px] l:w-[800px] text-white  hover:bg-gray-700 hover:opacity-60 p-2 pr-5 py-5 flex justify-end gap-5`}
+              className={`absolute  w-[90%] md:w-[700px] l:w-[800px] text-white  hover:bg-gray-700 opacity-0 hover:opacity-60 p-2 pr-5 py-5 flex justify-end gap-5`}
             >
               <a href={pdfDownloadUrl}>
                 <Icon
@@ -66,7 +68,12 @@ const Resume = ({ func }) => {
             </div>
 
             <a href={pdfUrl} target='_blank' rel='noreferrer'>
-              <img className='w-[100%] ' src={imageUrl} alt='' loading='lazy' />
+              <img
+                className='w-[100%] h-[100%] '
+                src={imageUrl}
+                alt=''
+                loading='lazy'
+              />
             </a>
           </div>
 

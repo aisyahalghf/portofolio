@@ -24,10 +24,10 @@ const Navbar = ({ handleClick }) => {
   };
 
   const fullScreen =
-    "font-medium flex flex-col md:p-0  rounded-lg border py-4 shadow shadow-slate-200 md:shadow-none  md:flex-row md:space-x-8 md:mt-0 md:border-0  items-center";
+    "font-medium flex flex-col md:p-0  rounded-lg border py-4 shadow shadow-slate-200 md:shadow-none md:flex-row md:space-x-8 md:mt-0 md:border-0  items-center";
 
   const mobileScreen =
-    "font-medium flex flex-col px-10 md:p-0 md:flex-row md:space-x-8 md:mt-0 w-full items-center  gap-2 ";
+    "font-medium flex flex-col px-10 md:p-0 md:flex-row md:space-x-8 md:mt-0 w-full items-center gap-2 ";
 
   return (
     <nav className='shadow shadow-slate-200 sticky top-0 z-10  '>
@@ -64,7 +64,7 @@ const Navbar = ({ handleClick }) => {
           </div>
 
           <div
-            className={` absolute  top-14 w-40 right-2 md:relative md:top-0 md:right-0 ${
+            className={` absolute  top-14 w-40 right-2 md:relative md:top-0 md:right-0  ${
               isMenuOpen ? "" : "hidden"
             } w-full md:block md:w-auto`}
             id='navbar-default'
@@ -95,7 +95,7 @@ const Navbar = ({ handleClick }) => {
                     </Link>
                   </li>
                   <li>
-                    <div className=' hidden md:flex '>
+                    <div className='hidden md:flex '>
                       <IconButton
                         onClick={(e) => handleClick(theme.palette.mode)}
                         color='inherit'

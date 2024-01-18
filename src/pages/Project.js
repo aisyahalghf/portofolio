@@ -1,4 +1,5 @@
 import ImageCard from "../componen/ImageCard";
+import Menu from "../componen/Menu";
 
 const Project = ({ mode }) => {
   const data = [
@@ -157,9 +158,10 @@ const Project = ({ mode }) => {
   ];
 
   return (
-    <section className='container mx-auto flex justify-center mt-10 h-[100vh] px-5 md:px-0 xl:px-5'>
-      <div className='flex flex-col gap-10'>
-        <div className=' font-extrabold text-5xl  '>Project.</div>
+    <section className='container mx-auto flex justify-center pt-10 h-[100vh] px-5 md:px-0 xl:px-5'>
+      <Menu />
+      <div className='flex flex-col gap-10 pt-10'>
+        <div className='font-extrabold  text-5xl'>Project.</div>
         <ImageCard itemData={data} mode={mode} />
       </div>
     </section>

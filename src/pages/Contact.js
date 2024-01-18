@@ -9,6 +9,7 @@ import emailjs from "@emailjs/browser";
 import Box from "@mui/material/Box";
 import Swal from "sweetalert2";
 import Button from "@mui/material/Button";
+import Menu from "../componen/Menu";
 
 const Contact = () => {
   const form = useRef();
@@ -77,93 +78,98 @@ const Contact = () => {
   };
 
   return (
-    <section className=" container mx-auto  h-[91vh]  px-5 md:px-20 lg:px-0 w-full  lg:w-[30vw] text-justify  mt-10 ">
-      <div className="">
-        <h1 className="font-extrabold text-5xl mb-5 ">Contact.</h1>
-        <h2>
-          Feel free to Contact me by submitting the form below and i will get
-          back to you as soon as possible{" "}
-        </h2>
-
-        <Box
-          component="form"
-          className=" flex flex-col justify-center gap-5  py-10   "
-          ref={form}
-          onSubmit={sendEmail}
-        >
-          <TextField
-            error={errInputSender}
-            id="outlined-helperText"
-            label="Name"
-            size="small"
-            helperText={errInputSender}
-            name="sender"
-            value={sender}
-            onBlur={handleErrorInputSender}
-            onChange={(e) => {
-              setSender(e.target.value);
-            }}
-          />
-          <TextField
-            id="outlined-helperText"
-            error={errInputSenderMail}
-            label="Email"
-            size="small"
-            helperText={errInputSenderMail}
-            name="senderEmail"
-            onBlur={handleErrorInputSenderEmail}
-            onChange={(e) => {
-              setSenderEmail(e.target.value);
-            }}
-          />
-          <TextField
-            multiline
-            error={errInputDataMessage}
-            rows={3}
-            onBlur={handleErrorInputDataMessage}
-            size="small"
-            id="outlined-helperText"
-            label="Message"
-            helperText={errInputDataMessage}
-            name="dataMessage"
-            onChange={(e) => {
-              setDataMessage(e.target.value);
-            }}
-          />{" "}
-          {!sender || !senderEmail || !dataMessage ? null : (
-            <Button
-              disabled={
-                errInputDataMessage ||
-                errInputSender ||
-                errInputSenderMail ||
-                loading
-              }
-              type="submit"
-              variant="contained"
-              color="inherit"
-            >
-              Submit
-            </Button>
-          )}
-        </Box>
+    <section>
+      <div className='fixed right-0'>
+        <Menu />
       </div>
+      <div className=' container mx-auto  h-[100vh]  px-5 md:px-20 lg:px-0 w-full  lg:w-[30vw] text-justify pt-24  '>
+        <div className=''>
+          <h1 className='font-extrabold text-5xl mb-5 '>Contact.</h1>
+          <h2>
+            Feel free to Contact me by submitting the form below and i will get
+            back to you as soon as possible{" "}
+          </h2>
 
-      <div className=" flex justify-start gap-4 ">
-        <a href="https://github.com/aisyahalghf">
-          <GitHubIcon />
-        </a>
-        <a href="https://www.linkedin.com/in/aisyahputrialghifari">
-          <LinkedInIcon />
-        </a>
-        <a href="https://twitter.com/Aisyahalghifari">
-          <TwitterIcon />
-        </a>
-        <a href="https://www.facebook.com/aisyah.alghifari.14?mibextid=LQQJ4d">
-          <FacebookIcon />
-        </a>
-        <a href="https://www.instagram.com/aisyahalghf/?igshid=MjEwN2IyYWYwYw%3D%3D">
-          <InstagramIcon />
-        </a>
+          <Box
+            component='form'
+            className=' flex flex-col justify-center gap-5  py-10   '
+            ref={form}
+            onSubmit={sendEmail}
+          >
+            <TextField
+              error={errInputSender}
+              id='outlined-helperText'
+              label='Name'
+              size='small'
+              helperText={errInputSender}
+              name='sender'
+              value={sender}
+              onBlur={handleErrorInputSender}
+              onChange={(e) => {
+                setSender(e.target.value);
+              }}
+            />
+            <TextField
+              id='outlined-helperText'
+              error={errInputSenderMail}
+              label='Email'
+              size='small'
+              helperText={errInputSenderMail}
+              name='senderEmail'
+              onBlur={handleErrorInputSenderEmail}
+              onChange={(e) => {
+                setSenderEmail(e.target.value);
+              }}
+            />
+            <TextField
+              multiline
+              error={errInputDataMessage}
+              rows={3}
+              onBlur={handleErrorInputDataMessage}
+              size='small'
+              id='outlined-helperText'
+              label='Message'
+              helperText={errInputDataMessage}
+              name='dataMessage'
+              onChange={(e) => {
+                setDataMessage(e.target.value);
+              }}
+            />{" "}
+            {!sender || !senderEmail || !dataMessage ? null : (
+              <Button
+                disabled={
+                  errInputDataMessage ||
+                  errInputSender ||
+                  errInputSenderMail ||
+                  loading
+                }
+                type='submit'
+                variant='contained'
+                color='inherit'
+              >
+                Submit
+              </Button>
+            )}
+          </Box>
+        </div>
+
+        <div className=' flex justify-start gap-4 '>
+          <a href='https://github.com/aisyahalghf'>
+            <GitHubIcon />
+          </a>
+          <a href='https://www.linkedin.com/in/aisyahputrialghifari'>
+            <LinkedInIcon />
+          </a>
+          <a href='https://twitter.com/Aisyahalghifari'>
+            <TwitterIcon />
+          </a>
+          <a href='https://www.facebook.com/aisyah.alghifari.14?mibextid=LQQJ4d'>
+            <FacebookIcon />
+          </a>
+          <a href='https://www.instagram.com/aisyahalghf/?igshid=MjEwN2IyYWYwYw%3D%3D'>
+            <InstagramIcon />
+          </a>
+        </div>
       </div>
     </section>
   );

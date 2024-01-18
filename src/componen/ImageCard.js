@@ -30,7 +30,7 @@ const ImageCard = ({ itemData, mode }) => {
     <ImageList
       gap={30}
       cols={getCols()}
-      className=" w-full  xxl:w-[1400px] mb-10 md:mb-16  "
+      className=' w-full  xxl:w-[1400px] mb-10 md:mb-16  '
     >
       {itemData?.map((item) => (
         <ImageListItem
@@ -45,30 +45,30 @@ const ImageCard = ({ itemData, mode }) => {
         >
           <div>
             <img
-              className=" rounded-lg md:rounded-2xl border border-slate-200 shadow shadow-slate-200 h-[200px] md:h-[400px] md:w-[700px]  xxl:h-[400px] w-[400px] xxl:w-[700px]"
+              className=' rounded-lg md:rounded-2xl border border-slate-200 shadow shadow-slate-200 h-[200px] md:h-[400px] md:w-[700px]  xxl:h-[400px] w-[400px] xxl:w-[700px]'
               src={item?.img}
               alt={item?.title}
-              loading="lazy"
+              loading='lazy'
             />
           </div>
 
-          <div className=" image-overlay">
+          <div className='image-overlay opacity-0 group hover:opacity-100'>
             <ImageListItemBar
-              className=" rounded-b-lg md:rounded-b-2xl h-9  md:h-16  "
+              className=' rounded-b-lg md:rounded-b-2xl h-9 md:h-24  '
               title={item?.title}
               actionIcon={
                 <IconButton
                   sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                  size="small"
-                  gap="2px"
+                  size='small'
+                  gap='2px'
                 >
-                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm md:mr-2">
+                  <div className='border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm md:mr-2'>
                     {item?.tech?.slice(0, 1)}
                   </div>
-                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm  md:mr-2">
+                  <div className='border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm  md:mr-2'>
                     {item?.tech?.slice(1, 2)}
                   </div>
-                  <div className="border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm  md:mr-2">
+                  <div className='border border-slate-200 rounded-md md:rounded-lg px-1 md:px-2 text-[10px] mr-1 md:text-sm  md:mr-2'>
                     {item?.tech?.slice(2, 3)}
                   </div>
                 </IconButton>

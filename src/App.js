@@ -1,4 +1,3 @@
-import Navbar from "./componen/Navbar";
 import LandingPage from "./pages/LandingPage";
 import Resume from "./pages/Resume";
 import Project from "./pages/Project";
