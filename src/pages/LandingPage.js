@@ -63,19 +63,39 @@ const LandingPage = ({ mode, func }) => {
         </Link>
 
         <div className=' flex justify-start gap-4 '>
-          <a href='https://github.com/aisyahalghf'>
+          <a
+            href='https://github.com/aisyahalghf'
+            target='_blank'
+            rel='noreferrer'
+          >
             <GitHubIcon />
           </a>
-          <a href='https://www.linkedin.com/in/aisyahputrialghifari'>
+          <a
+            href='https://www.linkedin.com/in/aisyahputrialghifari'
+            target='_blank'
+            rel='noreferrer'
+          >
             <LinkedInIcon />
           </a>
-          <a href='https://twitter.com/Aisyahalghifari'>
+          <a
+            href='https://twitter.com/Aisyahalghifari'
+            target='_blank'
+            rel='noreferrer'
+          >
             <TwitterIcon />
           </a>
-          <a href='https://www.facebook.com/aisyah.alghifari.14?mibextid=LQQJ4d'>
+          <a
+            href='https://www.facebook.com/aisyah.alghifari.14?mibextid=LQQJ4d'
+            target='_blank'
+            rel='noreferrer'
+          >
             <FacebookIcon />
           </a>
-          <a href='https://www.instagram.com/aisyahalghf/?igshid=MjEwN2IyYWYwYw%3D%3D'>
+          <a
+            href='https://www.instagram.com/aisyahalghf/?igshid=MjEwN2IyYWYwYw%3D%3D'
+            target='_blank'
+            rel='noreferrer'
+          >
             <InstagramIcon />
           </a>
         </div>
